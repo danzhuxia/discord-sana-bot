@@ -95,9 +95,9 @@ const create = async ({ redis, discord }) => {
           });
 
         const messages = {
-          0: `sprinkled!${time ? ` (${time})` : ""} :bee:`,
+          0: `sprinkled!${time ? ` (${time})` : ""} :moneybag:`,
           1: "not sprinkled because of an error... :cry:",
-          2: "already sprinkled... :no_entry_sign:",
+          2: " :credit_card: already sprinkled... :no_entry_sign:",
         };
         channel.send(
           `<@${result.user}> Your node ${result.address} was ${

@@ -10,7 +10,7 @@
       },
       {
         "indexed": false,
-        "internalType": "enum SwarmFaucet.FundState",
+        "internalType": "enum SanaFaucet.FundState",
         "name": "state",
         "type": "uint8"
       }
@@ -273,12 +273,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "__ethAmount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "__bzzAmount",
+        "name": "__sanaAmount",
         "type": "uint256"
       }
     ],
@@ -303,21 +298,7 @@
   },
   {
     "inputs": [],
-    "name": "ethAmount",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "bzzAmount",
+    "name": "sanaAmount",
     "outputs": [
       {
         "internalType": "uint256",
@@ -350,20 +331,7 @@
         "type": "uint256"
       }
     ],
-    "name": "setBzzAmount",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "setEthAmount",
+    "name": "setSanaAmount",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -394,20 +362,7 @@
         "type": "uint256"
       }
     ],
-    "name": "withdrawBzz",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdrawEth",
+    "name": "withdrawSana",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

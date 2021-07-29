@@ -14,7 +14,7 @@ const CONFIG = {
   options: [
     {
       name: "sprinkle",
-      description: "Funds your test nodes with gBZZ and gETH",
+      description: "Funds your test nodes with gSANA",
       type: "SUB_COMMAND",
       options: [
         {
@@ -123,22 +123,22 @@ const pending = async (interaction, _, { redis }) => {
     pending.length
       ? `The following address${
           pending.length > 1 ? "es are" : " is"
-        } still pending: ${pending.join(" ")}`
-      : "You don't have any pending deploys! :grin: :bee:"
+        } still pending: ${pending.join(" ")} :sweat_drops: `
+      : "You don't have any pending deploys! :love_you_gesture: "
   );
 };
 
 const allowance = async (interaction) => {
   const allowance = await getAllowance(interaction);
-  interaction.ephemeral(`You can have ${allowance} pending sprinkles at most`);
+  interaction.ephemeral(`You can have ${allowance} pending sprinkles at most :whale:`);
 };
 
 const remaining = async (interaction, _, { redis }) => {
   const remaining = await getRemaining(interaction, { redis });
   interaction.ephemeral(
     remaining
-      ? `You have ${remaining} sprinkle${remaining === 1 ? "" : "s"} left.`
-      : "You do not have any sprinkles left. Deploy sprinkled nodes to get sprinkles back."
+      ? `You have ${remaining} sprinkle${remaining === 1 ? "" : "s"} left. :money_mouth::money_mouth_face:`
+      : "You do not have any sprinkles left. Deploy sprinkled nodes to get sprinkles back. :sun_with_face:"
   );
 };
 
@@ -161,7 +161,7 @@ const sprinkle = async (interaction, options, { redis }) => {
     interaction.ephemeral(
       `The following address${
         invalid.length > 1 ? "es are" : " is"
-      } invalid: ${invalid.join(" ")}`
+      } invalid: ${invalid.join(" ")} :u7121:`
     );
     return;
   }
@@ -182,8 +182,8 @@ const sprinkle = async (interaction, options, { redis }) => {
   if (addresses.length > remaining) {
     interaction.ephemeral(
       remaining
-        ? `You can only sprinkle ${remaining} more addresses.`
-        : "You don't have any sprinkles left, please deploy your sprinkled nodes to be gifted more!"
+        ? `You can only sprinkle ${remaining} more addresses. :u6709:`
+        : "You don't have any sprinkles left, please deploy your sprinkled nodes to be gifted more! :u7121:"
     );
     return;
   }
@@ -218,14 +218,14 @@ const sprinkle = async (interaction, options, { redis }) => {
       addresses.length > 1
         ? `${addresses.length} addresses were`
         : `${addresses[0]} was`
-    } queued...`
+    } queued... :hourglass_flowing_sand:`
   );
 };
 
 const queue = async (interaction, _, { redis }) => {
   const count = await redis.llen(QUEUE_KEY);
   interaction.ephemeral(
-    `There are currently ${count} addresses waiting to be sprinkled`
+    `There are currently ${count} addresses waiting to be sprinkled :watch:`
   );
 };
 
